@@ -27,16 +27,16 @@ UI.prototype = {
     var container = document.getElementById("films");
 
     for(var film of films) {
-      var liTitle = document.createElement("li");
-      var liGenre = document.createElement("li")
-      this.appendText(liTitle, film.title, "Film: ");
-      this.appendText(liGenre, film.genre, "Genre: ");
+      var li = document.createElement("li");
+      // var liGenre = document.createElement("li")
+      this.appendText(li, film.title, "Film: ");
+      this.appendText(li, film.genre, "Genre: ");
 
       for(var review of film.reviews){
-        this.createReview(liTitle, review);
+        this.createReview(li, review);
       }
-      container.appendChild(liTitle);
-      container.appendChild(liGenre);
+      container.appendChild(li);
+      // container.appendChild(liGenre);
     }
   }
 }
