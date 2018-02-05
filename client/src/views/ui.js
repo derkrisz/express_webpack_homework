@@ -27,13 +27,16 @@ UI.prototype = {
     var container = document.getElementById("films");
 
     for(var film of films) {
-      var li = document.createElement("li");
-      this.appendText(li, film.title, "Film: ");
-      
+      var liTitle = document.createElement("li");
+      var liGenre = document.createElement("li")
+      this.appendText(liTitle, film.title, "Film: ");
+      this.appendText(liGenre, film.genre, "Genre: ");
+
       for(var review of film.reviews){
-        this.createReview(li, review);
+        this.createReview(liTitle, review);
       }
-      container.appendChild(li);
+      container.appendChild(liTitle);
+      container.appendChild(liGenre);
     }
   }
 }
