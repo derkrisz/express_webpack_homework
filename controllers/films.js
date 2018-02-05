@@ -37,5 +37,9 @@ filmRouter.delete('/:id', function(req, res) {
 });
 
 //add new review
+filmRouter.post('/:id', function(req, res) {
+  films[req.params.id].reviews.push(req.body.reviews);
+  res.json({data:films});
+})
 
 module.exports = filmRouter;
